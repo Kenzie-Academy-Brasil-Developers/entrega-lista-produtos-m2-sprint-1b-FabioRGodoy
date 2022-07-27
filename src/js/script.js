@@ -61,7 +61,7 @@ function busca(valorPesquisa){
     
         for(let i = 0; i < produtos.length; i++){
         let nomeProduto = produtos[i].nome.toLowerCase().trim()
-        let categoria = produtos[i].categoria.toLowerCase().trim()
+        let categoria = produtos[i].secao.toLowerCase().trim()
     
             if(nomeProduto.includes(valorPesquisa) || categoria.includes(valorPesquisa) ){
                 input.value = ""
