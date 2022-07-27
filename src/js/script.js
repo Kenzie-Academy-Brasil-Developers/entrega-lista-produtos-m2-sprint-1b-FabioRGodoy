@@ -1,11 +1,11 @@
-const ul = document.querySelector('ul')
-const todos = document.querySelector('#todos')
-const hortifruti = document.querySelector('#hortifruti')
-const panificadora = document.querySelector('#panificadora')
-const laticinios = document.querySelector('#laticinios')
-const input = document.querySelector('.campoBuscaPorNome')
-const btnBusca = document.querySelector('.estiloGeralBotoes--botaoBuscaPorNome')
-const spanTotal = document.querySelector('.total')
+const ul            = document.querySelector('ul')
+const todos         = document.querySelector('#todos')
+const hortifruti    = document.querySelector('#hortifruti')
+const panificadora  = document.querySelector('#panificadora')
+const laticinios    = document.querySelector('#laticinios')
+const input         = document.querySelector('.campoBuscaPorNome')
+const btnBusca      = document.querySelector('.estiloGeralBotoes--botaoBuscaPorNome')
+const spanTotal     = document.querySelector('.total')
 
 todos.addEventListener("click", filtroTodos)
 hortifruti.addEventListener("click", filtroHortiFruti)
@@ -61,7 +61,7 @@ function busca(valorPesquisa){
     
         for(let i = 0; i < produtos.length; i++){
         let nomeProduto = produtos[i].nome.toLowerCase().trim()
-        let categoria = produtos[i].secao.toLowerCase().trim()
+        let categoria   = produtos[i].secao.toLowerCase().trim()
     
             if(nomeProduto.includes(valorPesquisa) || categoria.includes(valorPesquisa) ){
                 input.value = ""
@@ -101,11 +101,8 @@ function filtroLaticinios(){
 }
 
 function calculaTotal(arr){
-    const soma = arr.reduce((prev, curr)=>{
-        return prev + curr.preco
-    }, 0)
-    console.log(soma)
-
+    const soma = arr.reduce((prev, curr)=>{ return prev + curr.preco}, 0)
+    
     spanTotal.innerText = `R$ ${soma},00`
 }
 calculaTotal(produtos)
